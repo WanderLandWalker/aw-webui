@@ -45,6 +45,9 @@ interface State {
   useMultidevice: boolean;
   requestTimeout: number;
 
+  // Display language
+  locale: string;
+
   // Set to true if settings loaded
   _loaded: boolean;
 }
@@ -76,6 +79,8 @@ export const useSettingsStore = defineStore('settings', {
     always_active_pattern: '',
     classes: defaultCategories,
     views: defaultViews,
+
+    locale: 'en',
 
     // Developer settings
     // NOTE: PRODUCTION might be undefined (in tests, for example)
